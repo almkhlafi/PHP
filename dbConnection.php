@@ -1,7 +1,5 @@
-<!DOCTYPE html>
-<html>
 
-    <?php
+<?php
 // Increase visit count
 if (!isset($_COOKIE['visits'])) {
     $_COOKIE['visits'] = 0;
@@ -32,15 +30,10 @@ if (!$result) {
 $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
 // Output pizza data
-foreach ($pizzas as $pizza) {
+/*foreach ($pizzas as $pizza) {
     echo "<p>Title: " . $pizza['title'] . ", Ingredients: " . $pizza['ingredients'] . ", ID: " . $pizza['id'] . "</p>";
-}
+}*/
 
 // Close connection
 $conn->close();
 ?>
-
-    <?php include 'add.php'; ?>
-   
-    <?php include 'templates/footer.php'; ?>
-</html>

@@ -49,7 +49,7 @@ if(array_filter($error)){
 }else 
 {
     //header('Location:index.php');//Or
-header('refresh:5;index.php');
+header('refresh:5;orders.php');
 echo "<br>Will refresh in 5 seconde !!";
 }
 }
