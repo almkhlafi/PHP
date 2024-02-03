@@ -52,6 +52,7 @@ if (array_filter($error)) {
 } else {
     // Check if POST variables are set
     if (isset($_POST['email'], $_POST['title'], $_POST['ingredients'])) {
+        /*We use mysqli_real_escape_string() to prevent any malicious Code inserted by user (XSS)*/
         $email = mysqli_real_escape_string($conn, $_POST['email']);
         $title = mysqli_real_escape_string($conn, $_POST['title']);
         $ingredient = mysqli_real_escape_string($conn, $_POST['ingredients']);
@@ -75,7 +76,6 @@ if (array_filter($error)) {
 }
 
 ?>
-
 
     <?php include 'templates/header.php'; ?>
 
