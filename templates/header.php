@@ -1,3 +1,4 @@
+<?php include 'cookies.php';?>
 <?php 
 session_start();
 $username=$_SESSION['username'];
@@ -6,8 +7,8 @@ if(isset($_POST['exit'])){
     $username=$_SESSION['username'];
     header('refresh:2; ../userSession.php');
 }
-
 ?>
+
 <head>
 <title>Pizza</title>
 
