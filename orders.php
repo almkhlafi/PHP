@@ -1,5 +1,5 @@
 <?php include 'templates/header.php'; ?>
-<?php include 'dbConnection.php';?>
+<?php include 'config/dbConnection.php';?>
 <?php 
 // Fetch pizza data from the database
 $sql = 'SELECT title, ingredients, id FROM PizzaInfo ORDER BY created_at ';

@@ -24,7 +24,7 @@ $error=array('email'=>'','title'=>'','ingredients'=>'');
     else{
         $title=$_POST['title'];
         //Valudation Regular Expressions (RegEx)
-        if(!preg_match('/^[a-zA-Z]+$/',$title))
+        if(!preg_match('/^[a-z A-Z]+$/',$title))
         {
             $error['title']= "Title must be letters and spaces only<br>";  
         }else{
@@ -44,15 +44,36 @@ $error=array('email'=>'','title'=>'','ingredients'=>'');
         echo  htmlspecialchars($_POST['ingredients']);
             }
 }
-if(array_filter($error)){
+include 'config/dbConnection.php';
+
+// Check if form has errors
+if (array_filter($error)) {
     echo "form has an error<br>";
-}else 
-{
-    //header('Location:index.php');//Or
-header('refresh:2;orders.php');
-echo "<br>Will refresh in 5 seconde !!";
+} else {
+    // Check if POST variables are set
+    if (isset($_POST['email'], $_POST['title'], $_POST['ingredients'])) {
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $ingredient = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+        $sql = "INSERT INTO PizzaInfo (title, ingredients, email) VALUES ('$title', '$ingredient', '$email')";
+
+        if (mysqli_query($conn, $sql)) {
+            // Insertion successful
+            echo "<mark><br>Inserted successfully</mark>";
+            header('refresh:4;orders.php');
+        } else {
+            echo 'Query Error: ' . mysqli_error($conn);
+        }
+    } else {
+        echo "One or more POST variables are not set.";
+    }
+    $conn->close();
+    
 }
+
 }
+
 ?>
 
 
@@ -60,7 +81,7 @@ echo "<br>Will refresh in 5 seconde !!";
 
     <section class="container grey-text">
         <h4 class="center">Add Pizza</h4>
-        <form class="white" action="add.php" method="POST">
+        <form class="white" action="" method="POST">
             <label>Email:</label>
             <input type="text" name="email" value="<?php echo htmlspecialchars("$email"); ?>">
             <div class="red-text"><?php echo $error['email']; ?></div>
