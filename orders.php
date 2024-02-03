@@ -15,7 +15,7 @@ $pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 }*/
 
 // Close connection
-
+mysqli_free_result($result);
 $conn->close();
 
 ?>
@@ -40,7 +40,7 @@ $conn->close();
                         </ul>
                     </div>
                     <div class="card-action right-align">
-                        <a class="brand-text" herf="#">more into</a>
+                        <a class="brand-text" href="details.php?id=<?php echo $pizza['id']?>">more into</a>
                     </div>
                 </div>
             </div>
