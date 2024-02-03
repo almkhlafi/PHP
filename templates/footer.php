@@ -1,16 +1,4 @@
-<head>
-    <style>
-        .section {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-    </style>
-    </head>
+
 <footer class="section">
         <div class="center gray-text">
             Copy right 2024 Pizzas</div>
@@ -23,6 +11,16 @@
         echo "PHP Self: " . $_SERVER['PHP_SELF'];
         echo "</div>";
         ?>
-    </footer>
+        <form action="templates/header.php" method="POST">
+    <div class="container">
+        <ul id="nav-mobile" class="right hide-on-small-and-down">
+            <li class="white-text">Hello!
+                <?php echo htmlspecialchars($username);?>
+            <li>
+            <li><input type="submit" name="exit" class="btn brand z-depth-0"></li>
+        </ul>
+    </div>
+</form>
+</footer>
 </body>
 </html>

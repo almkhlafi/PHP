@@ -1,7 +1,11 @@
 <?php 
 session_start();
+if(isset($_POST['exit'])){
+    unset($_SESSION['username']);
+    header('Location: ../userSession.php');
 
-$username=$_SESSION['username'];
+}
+
 ?>
 <head>
 <title>Pizza</title>
@@ -29,7 +33,15 @@ $username=$_SESSION['username'];
     position: relative;
     top: -30px;
 }
-
+.footer.section {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
     </style>
 </head>
 <body class="grey lighten-4">
