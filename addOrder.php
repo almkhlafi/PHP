@@ -81,7 +81,7 @@ if (array_filter($error)) {
 
     <section class="container grey-text">
         <h4 class="center">Add Pizza</h4>
-        <form class="white" action="" method="POST">
+        <form class="white" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">
             <label>Email:</label>
             <input type="text" name="email" value="<?php echo htmlspecialchars("$email"); ?>">
             <div class="red-text"><?php echo $error['email']; ?></div>

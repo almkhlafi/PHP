@@ -1,3 +1,8 @@
+<?php 
+session_start();
+
+$username=$_SESSION['username'];
+?>
 <head>
 <title>Pizza</title>
 
@@ -22,8 +27,9 @@
     margin:-40px auto 13px;
     display":block;
     position: relative;
-    top: -30px;;
+    top: -30px;
 }
+
     </style>
 </head>
 <body class="grey lighten-4">
@@ -31,6 +37,7 @@
         <div class="container">
         <a href="orders.php" cass="brand-logo brand-text">Pizza </a>
         <ul id="nav-mobile" class="right hide-on-small-and-down"> 
+            <li class="white-text">Hello! <?php echo htmlspecialchars($username);?><li>
          <li><a href="addOrder.php" class="btn brand z-depth-0">Add a Pizza</a></li>
 </ul>
     </div>
