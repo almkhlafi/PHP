@@ -1,9 +1,10 @@
 <?php 
 session_start();
+$username=$_SESSION['username'];
 if(isset($_POST['exit'])){
     unset($_SESSION['username']);
-    header('Location: ../userSession.php');
-
+    $username=$_SESSION['username'];
+    header('refresh:2; ../userSession.php');
 }
 
 ?>
