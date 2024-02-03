@@ -1,5 +1,27 @@
 <?php include 'templates/header.php'; ?>
 <?php include 'dbConnection.php';?>
+<?php 
+// Fetch pizza data from the database
+$sql = 'SELECT title, ingredients, id FROM PizzaInfo ORDER BY created_at ';
+$result = mysqli_query($conn, $sql);
+if (!$result) {
+    die("Error fetching pizza data: " . mysqli_error($conn));
+}
+$pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
+// Output pizza data
+/*foreach ($pizzas as $pizza) {
+    echo "<p>Title: " . $pizza['title'] . ", Ingredients: " . $pizza['ingredients'] . ", ID: " . $pizza['id'] . "</p>";
+}*/
+
+// Close connection
+
+$conn->close();
+
+?>
+
+
+
 <h4 class="center grey-text">Pizzas!</h4>
     <div class="container">
         <div class="row">
@@ -8,9 +30,14 @@
                 <div class="card z-depth-0">
                     <div class="card-content center">
                         <h6><?php echo htmlspecialchars($pizza['title']);?></h6>
-                        <div>
-                            <?php echo htmlspecialchars($pizza['ingredients']);?></div>
-                    </div>
+                            <ul>
+                            <?php foreach(explode(',',$pizzas[0]['ingredients']) as $ing){?>
+                             
+                             <li><?php echo htmlspecialchars($ing) ?><li>   
+                
+                        <?php } ?> 
+                    </ul>
+                        </div>
                     <div class="card-action right-align">
                         <a class="brand-text" herf="#">more into</a>
                     </div>

@@ -21,19 +21,5 @@ if ($conn->connect_error) {
     die("Connection Error: " . $conn->connect_error);
 }
 
-// Fetch pizza data from the database
-$sql = 'SELECT title, ingredients, id FROM PizzaInfo ORDER BY created_at ';
-$result = mysqli_query($conn, $sql);
-if (!$result) {
-    die("Error fetching pizza data: " . mysqli_error($conn));
-}
-$pizzas = mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-// Output pizza data
-/*foreach ($pizzas as $pizza) {
-    echo "<p>Title: " . $pizza['title'] . ", Ingredients: " . $pizza['ingredients'] . ", ID: " . $pizza['id'] . "</p>";
-}*/
-
-// Close connection
-$conn->close();
 ?>
