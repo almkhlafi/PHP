@@ -29,6 +29,8 @@ $conn->close();
         <div class="col s6 md3">
             <div class="card z-depth-0">
                 <div class="card-content center">
+                    <img src="img/pizza.jpg" class="pizza">
+
                     <h6><?php echo htmlspecialchars($pizza['title']);?></h6>
                     <ul>
 
@@ -47,10 +49,10 @@ $conn->close();
             <?php endforeach;?>
             <!-- more readable when for closing brackets-->
         </div>
-        <?php if(count($pizzas)>0){?> 
-                            <p style="background-color:lightgray;">There are :<?php echo count($pizzas); ?></p>
-                        <?php }else{?>
-                            <p style="background-color:lightgray;">No Pizzz</p>
-                            <?php }?>
+        <?php if(count($pizzas)>0){?>
+        <p style="background-color:lightgray;">There are :<?php echo count($pizzas); ?></p>
+    <?php }else{?>
+        <p style="background-color:lightgray;">No Pizzz</p>
+        <?php }?>
     </div>
     <?php include 'templates/footer.php'; ?>

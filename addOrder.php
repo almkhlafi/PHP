@@ -62,7 +62,7 @@ if (array_filter($error)) {
         if (mysqli_query($conn, $sql)) {
             // Insertion successful
             echo "<mark><br>Inserted successfully</mark>";
-            header('refresh:4;orders.php');
+            header('refresh:1;orders.php');
         } else {
             echo 'Query Error: ' . mysqli_error($conn);
         }
