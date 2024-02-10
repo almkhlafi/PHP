@@ -1,3 +1,6 @@
+<?php 
+include 'templates/session.php';
+?>
 <!DOCTYPE html>
 <html>
 

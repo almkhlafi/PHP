@@ -4,6 +4,6 @@ $username=$_SESSION['username'];
 if(isset($_POST['exit'])){
     unset($_SESSION['username']);
     $username=$_SESSION['username'];
-    header('refresh:2; ../userSession.php');
+    header('refresh:0; ../login.php');
 }
 ?>

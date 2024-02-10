@@ -11,11 +11,11 @@
         echo "PHP Self: " . $_SERVER['PHP_SELF'];
         echo "</div>";
         ?>
-        <form action="templates/header.php" method="POST">
+        <form action="templates/killsessions.php" method="POST">
     <div class="container">
         <ul id="nav-mobile" class="right hide-on-small-and-down">
             <li class="white-text">Hello!
-                <?php echo htmlspecialchars($username);?>
+                <?php echo htmlspecialchars($_SESSION['username']);?>
             <li>
             <li><input type="submit" name="exit" class="btn brand z-depth-0"></li>
         </ul>
