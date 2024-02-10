@@ -2,7 +2,7 @@
 <html>
 
 
-    <?php include 'addOrder.php'; ?>
+    <?php include 'addOrder.php';?>
    
     <?php include 'templates/footer.php'; ?>
 </html>

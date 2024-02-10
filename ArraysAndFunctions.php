@@ -32,10 +32,13 @@ print_r($maregedArray);
 echo "<br><br><mark>Passing Arrays within Functions</mark><br>";
 function product($product){
     //echo "<br> Product : {$product['Product']} Color {$product['Color']} Cost {$product['Price']} <br>";
-   return "<br> Product : {$product['Product']} Color {$product['Color']} Cost$ {$product['Price']} <br>";
+    print_r( $product);
+    return "<br> Product : {$product['Product']} Color {$product['Color']} Cost$ {$product['Price']} <br>";
+
 }
 $cart=product(array("Product"=>'T-shirt','Color'=>'Black','Price'=>'  50.0'));
 echo "$cart";
+
 
 
 echo "<br><br><br>";
