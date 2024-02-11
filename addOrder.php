@@ -1,3 +1,4 @@
+<?php  include 'session.php'?>
 <?php 
 $email=$title=$ingrediant='';
 $error=array('email'=>'','title'=>'','ingredients'=>'');
@@ -78,7 +79,6 @@ if (array_filter($error)) {
 ?>
 
     <?php include 'templates/header.php'; ?>
-
     <section class="container grey-text">
         <h4 class="center">Add Pizza</h4>
         <form class="white" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']);?>" method="POST">

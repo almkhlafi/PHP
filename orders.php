@@ -1,3 +1,4 @@
+<?php  include 'session.php' ?>
 <?php include 'templates/header.php'; ?>
 <?php include 'config/dbConnection.php';?>
 <?php 

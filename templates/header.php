@@ -1,4 +1,4 @@
-<?php include 'session.php';?>
+<?php include '../session.php';?>
 <?php include 'cookies.php';?>
 <head>
 <title>Pizza</title>
@@ -42,7 +42,7 @@
         <div class="container">
         <a href="orders.php" cass="brand-logo brand-text">Pizza </a>
         <ul id="nav-mobile" class="right hide-on-small-and-down"> 
-            <li class="white-text">Hello! <?php echo htmlspecialchars($_SESSION['username']."Ji");?><li>
+            <li class="white-text">Hello!(<?php echo htmlspecialchars($_SESSION['username'].") Welcome..");?><li>
          <li><a href="addOrder.php" class="btn brand z-depth-0">Add a Pizza</a></li>
 </ul>
     </div>
